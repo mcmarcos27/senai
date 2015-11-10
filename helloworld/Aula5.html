@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="../bower_components/angular-messages/angular-messages.js"></script>
+    <script src="app/js/Controller5.js"></script>
+    <link rel="stylesheet" href="../bower_components/bootstrap/dist/css/bootstrap-theme.css">
+    <link rel="stylesheet" href="../bower_components/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="../bower_components/font-awesome/css/font-awesome.css">
+    <link rel="stylesheet" href="app/css/media-queries.css">
+    <script src="service/alert-service.js"></script>
+</head>
+<body ng-app="senai">
+    <div class="container container-fluid teste-css"   >
+        <div class="row">
+            <div class="col-sm-4">
+                <div class="form-group">
+                    <label for="itNome">Nome</label>
+                    <input type="text"
+                        class="form-control"
+                        name="itNome"
+                        id="itNome"
+                        ng-model="entidade.nome"
+                        required
+                           ng-minlength="3"
+                        ng-maxlength="15"
+                        maxlength="15">
+                </div>
+            </div>
+
+
+            <div class="col-sm-4">
+                <div class="form-group">
+                    <label for="itEmail">E-mail</label>
+                    <input type="text"
+                        class="form-control"
+                        name="itEmail"
+                        id="itEmail"
+                        ng-model="entidade.email"
+                        required
+                        ng-minlength="3"
+                        ng-maxlength="15"
+                        maxlength="15"/>
+                </div>
+            </div>
+
+            <div class="col-sm-4">
+                <div class="form-group">
+                    <label for="itData">Data de Nascimento</label>
+                    <input type="text"
+                        class="form-control"
+                        name="itData"
+                        id="itData"
+                        ng-model="entidade.data"
+                        required
+                        ng-minlength="3"
+                        ng-maxlength="15"
+                        maxlength="15">
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <table class="table">
+        <tr>
+            <th>Nome</th>
+            <th>E-mail</th>
+            <th>Data de Nascimento</th>
+        </tr>
+        <tr ng-repeat="pessoa in listaDePessoas">
+            <td ng-bind="pessoa.nome"></td>
+            <td ng-bind="pessoa.email"></td>
+            <td ng-bind="pessoa.nascimento"></td>
+        </tr>
+    </table>
+
+    <button type="submit"
+            class="btn btn-warning"
+            ng-click="gravar()">
+        <i class="fa fa-eraser"></i>
+        Limpar
+    </button>
+    <button type="submit"
+            class="btn btn-default"
+            ng-click="limpar()">
+        <i class="fa fa-bed"></i>
+        Excluir
+    </button>
+    <button type="submit"
+            class="btn btn-primary"
+            ng-click="limpar()">
+        <i class="fa fa-save"></i>
+        Gravar
+    </button>
+
+</body>
+</html>

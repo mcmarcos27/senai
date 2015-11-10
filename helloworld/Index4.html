@@ -1,0 +1,110 @@
+<html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="app/js/controller4.js"></script>
+    <script src="../bower_components/angular-messages/angular-messages.js"></script>
+    <link rel="stylesheet" href="../bower_components/bootstrap/dist/css/bootstrap-theme.css">
+    <link rel="stylesheet" href="../bower_components/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="../bower_components/font-awesome/css/font-awesome.css">
+    <link rel="stylesheet" href="app/css/media-queries.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body ng-app="home">
+
+
+</div>
+    <div ng-controller="IndexController" class="container container-fluid">
+        <div class="row">
+        <div class="panel panel-default">
+
+                <div class="col-sm-4">
+                    <div class="panel-heading">Cadastro de Reserva</div>
+                </div>
+
+            </div>
+
+            <div class="panel-body">
+
+                <form novalidate name="myForm" ng-submit="salvar">
+                    <div class="col-sm-4">
+                    <input type="text"
+                            class="form-control"
+                            name="itNome"
+                            id="itNome"
+                            ng-model="entidade.nome"
+                            required
+                            ng-minlength="3"
+                            ng-maxlength="15"
+                            maxlength="15">
+                       <div class="help-block" ng-message="myForm.itNome.$error">
+                        <div ng-messages-include="error-messages"></div>
+                       </div>
+
+
+
+                </div>
+                    <div class="col-sm-4">
+                        <input type="text"
+                               class="form-control"
+                               name="itEndereco"
+                               id="itEndereco"
+                               ng-model="entidade.endereco"
+                               required
+                               ng-minlength="3"
+                               ng-maxlength="15"
+                               maxlength="15">
+
+                        <div class="help-block" ng-message="myForm.itEndereco.$error">
+                            <div ng-messages-include="error-messages"></div>
+                        </div>
+
+                    </div>
+
+                    <div class="col-sm-4">
+                        <input type="text"
+                               class="form-control"
+                               name="itEmail"
+                               id="itEmail"
+                               ng-model="entidade.email"
+                               required
+                               ng-minlength="3"
+                               ng-maxlength="15"
+                               maxlength="15">
+
+                        <div class="help-block" ng-message="myForm.itEmail.$error">
+                            <div ng-messages-include="error-messages"></div>
+                        </div>
+
+                    </div>
+                    <div class="col-sm-4">
+                        <input type="text"
+                               class="form-control"
+                               name="itData"
+                               id="itData"
+                               ng-model="entidade.data"
+                               required
+                               ng-minlength="3"
+                               ng-maxlength="15"
+                               maxlength="15">
+
+                        <div class="help-block" ng-message="myForm.itData.$error">
+                            <div ng-messages-include="error-messages"></div>
+                        </div>
+
+                    </div>
+                    <input type="submit">
+                </form>
+
+
+            </div>
+            </div>
+
+        </div>
+
+    </div>
+
+</body>
+</html>
